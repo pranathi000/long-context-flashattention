@@ -491,7 +491,6 @@ Independent chunk normalization breaks:
 - global attention semantics
 - exact softmax behavior
 
----
 
 ## 2. Streaming Online Softmax Solves The Problem
 
@@ -502,7 +501,6 @@ Maintaining:
 
 preserves exact attention equivalence.
 
----
 
 ## 3. Memory Efficiency Requires IO Awareness
 
@@ -513,7 +511,6 @@ Reducing:
 
 is critical for scalable inference.
 
----
 
 # Technologies Used
 
@@ -553,7 +550,7 @@ Potential future extensions:
 
 ---
 
-# Final Resume Summary
+# Summary
 
 Implemented mathematically exact FlashAttention-style streaming attention with paged KV-cache management, achieving significant memory reduction compared to naive attention while preserving numerical equivalence during scalable long-context transformer inference.
 
