@@ -137,7 +137,6 @@ Implements baseline full transformer attention.
 | Memory | O(N²) |
 | Compute | O(N²) |
 
----
 
 # 2. tiled_attention.py
 
@@ -164,7 +163,6 @@ Instead of materializing the entire attention matrix:
 
 Reduces active memory footprint dramatically.
 
----
 
 # 3. flashattention_utils.py
 
@@ -186,7 +184,6 @@ Maintains correct online softmax denominator.
 
 Ensures exact normalization when new maxima appear.
 
----
 
 # 4. allocator.py
 
@@ -209,7 +206,6 @@ Prevents:
 - inefficient allocations
 - large contiguous memory requirements
 
----
 
 # 5. page_table.py
 
@@ -224,7 +220,6 @@ Implements logical-to-physical KV page mapping.
 - Token-to-page translation
 - Offset computation
 
----
 
 # 6. reuse_policy.py
 
@@ -239,7 +234,6 @@ Implements KV-cache reuse and memory reclamation policy.
 - Request completion handling
 - Dynamic memory recycling
 
----
 
 # 7. chunk_executor.py
 
@@ -266,8 +260,6 @@ Softmax is NOT separable across chunks.
 
 This directly motivated:
 - exact streaming attention
-
----
 
 # 8. streaming_attention.py
 
@@ -406,7 +398,6 @@ Shows:
 Shows:
 - increasing efficiency advantage over naive attention
 
----
 
 # Main Technical Achievements
 
@@ -418,7 +409,6 @@ Implemented mathematically exact streaming attention with:
 - running-sum normalization
 - online softmax accumulation
 
----
 
 ## 2. Bounded Memory Execution
 
@@ -429,7 +419,6 @@ Avoided materializing:
 
 This enabled scalable long-context inference.
 
----
 
 ## 3. Numerical Correctness Validation
 
@@ -445,7 +434,6 @@ This proved:
 - stability
 - exact equivalence
 
----
 
 ## 4. Paged KV-Cache Management
 
@@ -457,7 +445,6 @@ Implemented:
 
 Inspired by modern inference runtimes.
 
----
 
 # Experimental Results
 
@@ -481,7 +468,6 @@ This demonstrates:
 - exact streaming implementation correctness
 - importance of global online softmax
 
----
 
 # Key Engineering Lessons
 
@@ -548,7 +534,6 @@ Potential future extensions:
 - Continuous batching
 - Production inference server integration
 
----
 
 # Summary
 
